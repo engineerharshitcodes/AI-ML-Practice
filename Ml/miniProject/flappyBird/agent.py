@@ -77,7 +77,7 @@ class Agent():
             self.optimizer=optim.Adam(policy_dqn.parameters(),lr=self.alpha)
             
             #Best reward only needs to store in the RUNS_DIR
-            best_reward=float("inf")
+            best_reward=float("-inf")
         
         else:   #Testing Case we want to load best model
             policy_dqn.load_state_dict(torch.load(self.MODEL_LIFE))
