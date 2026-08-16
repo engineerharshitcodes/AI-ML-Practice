@@ -12,12 +12,14 @@ import os
 import argparse
 
 #device
-if torch.backends.is_available():
-    device="mps"
-elif torch.cuda.is_available():
-    device="cuda"
+# if torch.backends.is_available():
+
+if torch.cuda.is_available():
+    device = "cuda"
 else:
-    device="cpu"
+    device = "cpu"
+
+print("Using device:", device)
     
 #Creating Directory
 RUNS_DIR="runs"
