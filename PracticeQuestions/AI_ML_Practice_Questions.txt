@@ -1,0 +1,195 @@
+AI/ML PRACTICE QUESTIONS
+==========================
+
+LEVEL 1 — SUPERVISED LEARNING
+-----------------------------
+
+Q1. TITANIC — CLASSIFICATION
+Use the Titanic dataset from Kaggle.
+
+Tasks:
+1. Load the dataset.
+2. Check shape, info and missing values.
+3. Identify numerical and categorical features.
+4. Handle missing values correctly.
+5. Encode categorical features.
+6. Split into train/test.
+7. Apply scaling where appropriate.
+8. Train:
+   - Logistic Regression
+   - Random Forest Classifier
+   - SVC
+9. Compare accuracy.
+10. Explain which model performed best and why.
+
+Important:
+Do NOT copy a Kaggle notebook. Build the pipeline yourself.
+
+
+Q2. CALIFORNIA HOUSING — REGRESSION
+Use:
+from sklearn.datasets import fetch_california_housing
+
+Tasks:
+1. Load the dataset.
+2. Train/test split.
+3. Scale the features.
+4. Train:
+   - Linear Regression
+   - Random Forest Regressor
+   - Gradient Boosting Regressor
+5. Compare R².
+6. Explain why tree/boosting models can outperform Linear Regression.
+
+
+Q3. BREAST CANCER — SVM
+Use:
+from sklearn.datasets import load_breast_cancer
+
+Tasks:
+1. Load the dataset.
+2. Split into train/test.
+3. Standardize features.
+4. Train:
+   - SVC(kernel="linear")
+   - SVC(kernel="rbf")
+5. Compare accuracy.
+6. Explain why scaling is important for SVM.
+
+
+LEVEL 2 — UNSUPERVISED LEARNING
+-------------------------------
+
+Q4. K-MEANS
+Use:
+from sklearn.datasets import make_blobs
+
+Create:
+X, y = make_blobs(
+    n_samples=500,
+    centers=4,
+    random_state=42
+)
+
+Important: IGNORE y.
+
+Tasks:
+1. Apply K-Means.
+2. Use the Elbow method to determine k.
+3. Use Silhouette Score.
+4. Compare the two methods.
+5. Explain why clustering does not require labels.
+
+
+Q5. PCA + K-MEANS
+Use:
+from sklearn.datasets import load_wine
+
+Tasks:
+1. Load Wine dataset.
+2. Standardize the features.
+3. Apply PCA(n_components=2).
+4. Apply K-Means.
+5. Visualize the clusters.
+6. Explain:
+   - Why scale before PCA?
+   - Does PCA perform clustering?
+   - What does n_components=2 mean?
+
+
+Q6. DBSCAN
+Use the dataset from Q4.
+
+Tasks:
+1. Apply DBSCAN.
+2. Experiment with eps.
+3. Experiment with min_samples.
+4. Visualize the clusters.
+5. Answer:
+   - What happens when eps is too small?
+   - What happens when eps is too large?
+   - What does label -1 mean?
+
+
+LEVEL 3 — REINFORCEMENT LEARNING
+--------------------------------
+
+Q7. Q-LEARNING
+Use Gymnasium:
+
+import gymnasium as gym
+env = gym.make("CliffWalking-v1")
+
+Tasks:
+1. Create a Q-table.
+2. Implement epsilon-greedy exploration.
+3. Implement the Q-learning update.
+4. Train the agent.
+5. Test the learned policy.
+6. Explain why Q-learning uses max Q(next_state).
+
+
+Q8. SARSA
+Use the same CliffWalking environment.
+
+Tasks:
+1. Implement SARSA.
+2. Train the agent.
+3. Compare its behavior with Q-learning.
+4. Explain:
+   - Why is SARSA on-policy?
+   - Why is Q-learning off-policy?
+   - What is the difference in their updates?
+
+
+Q9. DQN — FLAPPY BIRD
+Use your current FlappyBird-v0 project.
+
+Tasks:
+1. Explain the Policy DQN.
+2. Explain the Target DQN.
+3. Explain Experience Replay.
+4. Explain epsilon-greedy.
+5. Explain the Bellman target.
+6. Explain why gather() is used.
+7. Explain why the target network is periodically synchronized.
+8. Train the agent and track episode reward.
+9. Save the best model.
+10. Plot reward/learning progress.
+
+
+IMPORTANT THEORY QUESTIONS
+--------------------------
+
+Q10. Why is R² not normally used for classification?
+
+Q11. Why do we scale SVM/KNN but usually don't need scaling for Random Forest?
+
+Q12. Difference between Bagging and Boosting?
+
+Q13. What is n_estimators?
+
+Q14. What is OOB score in Random Forest?
+
+Q15. Why does soft voting require predict_proba()?
+
+Q16. What is data leakage/data snooping?
+
+Q17. Why should an imputer be fit on X_train and only transformed on X_test?
+
+Q18. What is the difference between PCA and feature selection?
+
+Q19. What does DBSCAN label -1 mean?
+
+Q20. Why do we use a target network in DQN?
+
+
+RECOMMENDED ORDER
+-----------------
+
+Q1 → Q2 → Q3 → Q4 → Q5 → Q6 → Q7 → Q8 → Q9
+
+Rule:
+First attempt every question yourself.
+Do not look at solutions immediately.
+Send me your code/answer after each question and I will check it.
