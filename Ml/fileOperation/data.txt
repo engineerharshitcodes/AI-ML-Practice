@@ -1,0 +1,3 @@
+Hello Python
+I am learning File Handling
+Python is easyI am practicing every day.
